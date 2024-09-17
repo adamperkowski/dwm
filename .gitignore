@@ -1,3 +1,6 @@
+.vim
 config.h
+config.def.h.*
+dwm.c.*
 dwm
 *.o
