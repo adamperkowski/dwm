@@ -1,9 +1,10 @@
 picom -f -b &
+feh --bg-center /home/xx0a_q/.images/windows-error.jpg &
 
 while true; do
     time=$(date "+%I:%M %p")
 
-    status="󰥔 $time"
+    status="$time"
 
     xsetroot -name "$status"
 

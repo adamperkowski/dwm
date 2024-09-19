@@ -1,0 +1,121 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "display": {
+    "color": "red",
+    "separator": " :",
+
+    "key": {
+      "width": 17,
+      "paddingLeft": 2,
+      "type": "both"
+    }
+  },
+
+  "logo": {
+    "source": "auto",
+    "color": {
+      "1": "red",
+      "2": "blue"
+    },
+    "padding": {
+      "top": 1
+    }
+  },
+
+  "modules": [
+    "break",
+    {
+      "type": "title",
+      "format": "\u001b[31m                  xx0a_q @ lunix                   \u001b[0m"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[34m╭─────────────────────────────────────────────────╮\u001b[0m"
+    },
+    {
+      "type": "os",
+      "key": "Distro  ",
+      "keyIcon": " "
+    },
+    {
+      "type": "kernel",
+      "key": "Kernel  ",
+      "keyIcon": " "
+    },
+    {
+      "type": "uptime",
+      "key": "Uptime  ",
+      "keyIcon": " "
+    },
+    {
+      "type": "packages",
+      "key": "Packages",
+      "keyIcon": " "
+    },
+    {
+      "type": "wm",
+      "key": "WM      ",
+      "keyIcon": " "
+    },
+    {
+      "type": "shell",
+      "key": "Shell   ",
+      "keyIcon": " "
+    },
+    {
+      "type": "terminal",
+      "keyIcon": " "
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[34m╰─────────────────────────────────────────────────╯\u001b[0m"
+    },
+    {
+      "type": "custom",
+      "format": "       {#0}󰫢    {#0}{#37}󰫢    {#0}{#36}󰫢    {#0}{#35}󰫢    {#0}{#34}󰫢    {#0}{#33}󰫢    {#0}{#32}󰫢    {#0}{#31}󰫢        "
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[34m╭─────────────────────────────────────────────────╮\u001b[0m"
+    },
+    {
+      "type": "datetime",
+      "key": "Date    ",
+      "keyIcon": "󰃭 "
+    },
+    {
+      "type": "terminalfont",
+      "key": "Font    ",
+      "keyIcon": " "
+    },
+    {
+      "type": "gpu",
+      "key": "GPU     ",
+      "keyIcon": " ",
+      "format": "{2}"
+    },
+    {
+      "type": "theme",
+      "key": "Theme   ",
+      "keyIcon": "󰉼 ",
+      "format": "{2}"
+    },
+    {
+      "type": "disk",
+      "key": "Disk    ",
+      "keyIcon": " ",
+      "format": "{1} / {2} ({3})",
+      "showExternal": false
+    },
+    {
+      "type": "cursor",
+      "key": "Cursor  ",
+      "keyIcon": " "
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[34m╰─────────────────────────────────────────────────╯\u001b[0m"
+    },
+    "break"
+  ]
+}
