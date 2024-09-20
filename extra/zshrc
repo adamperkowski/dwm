@@ -31,7 +31,7 @@ alias gtui="gitui -t /home/xx0a_q/.config/gitui/catppuccin-mocha.ron"
 alias gmain="if ! git checkout --track origin/main; then; git checkout main; fi"
 function gclone() { git clone "$1" && cd "$(basename $1 .git)" }
 
-alias update-aur-pkgs="cd AUR && ./auto_update_all.sh && cd -"
+alias update-aur-pkgs="cd AUR && ./auto_update_all.sh && cd -"    # this is for packages i maintain
 
 alias db="distrobox"
 alias cp="cp -i"
