@@ -1,4 +1,4 @@
-picom -f -b &
+picom -b &
 feh --bg-center /home/xx0a_q/.images/windows-error.jpg &
 
 while true; do
