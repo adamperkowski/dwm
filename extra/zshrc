@@ -1,0 +1,56 @@
+export ZSH="$HOME/.oh-my-zsh"
+
+#ZSH_THEME="nanotech"
+#ZSH_THEME="emotty"
+ZSH_THEME="trapd00r-catppuccin"
+
+plugins=(git)
+
+source $ZSH/oh-my-zsh.sh
+
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
+
+eval "$(zoxide init zsh --cmd cd)"
+
+alias sudo="sudo "
+alias uwuf="clear; uwufetch"
+alias ff="clear; fastfetch"
+alias nv="nvim -u /home/xx0a_q/.config/nvim/init.vim"
+alias hx="helix"
+alias icat="kitty +kitten icat"
+
+alias ga="git add"
+alias gc="git commit -m"
+alias gp="git push origin"
+alias gb="git branch"
+alias gpull="git pull origin"
+alias gcherry="git cherry-pick -x"
+alias gupdate-branch="git fetch upstream main && git merge upstream/main"
+alias gtui="gitui -t /home/xx0a_q/.config/gitui/catppuccin-mocha.ron"
+alias gmain="if ! git checkout --track origin/main; then; git checkout main; fi"
+function gclone() { git clone "$1" && cd "$(basename $1 .git)" }
+
+alias update-aur-pkgs="cd AUR && ./auto_update_all.sh && cd -"
+
+alias db="distrobox"
+alias cp="cp -i"
+
+alias system-upgrade="yes | paru; sudo pacman -Scc --noconfirm; paru -Scc --noconfirm"
+alias vencord-upgrade='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
+
+alias clipin="xsel --input --clipboard"
+alias clipout="xsel --output --clipboard"
+
+alias shred="shred -uvz"
+function shreddir() { find "$1" -type f -exec shred -uvz {} \; }
+
+ff; tmux ls
+
+export GPG_TTY=$(tty)
+gpgconf --launch gpg-agent
+
+function command_not_found_handler() {
+    echo -e "Command \e[91m$1\e[0m not found! \e[91mSTUPID! BONK!\e[0m OwO" >&2
+    return 127
+}
