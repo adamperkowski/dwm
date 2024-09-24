@@ -23,12 +23,9 @@ cd dwm
 ```
 
 #### To update, execute the following commands:
-> [!CAUTION]
-> This will overwrite any changes made to the files.
 
 ```bash
 cd $DWM_DIR
-git fetch origin main && git pull --rebase origin main
 ./update.sh
 ```
 
