@@ -1,5 +1,5 @@
 picom -b &
-feh --bg-center /home/xx0a_q/.images/windows-error.jpg &
+feh --bg-center ~/.images/windows-error.jpg &
 
 while true; do
     time=$(date "+%I:%M %p")

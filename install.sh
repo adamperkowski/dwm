@@ -33,14 +33,20 @@ fi
 
 echo "Installing deps"
 $SU pacman -S --needed --noconfirm base-devel fastfetch zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd feh pipewire \
-    p7zip 
+    p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-nerd-fonts-symbols kitty rofi flameshot 
 $AUR_HELPER -S --needed --noconfirm picom-ftlabs-git lemurs
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
-echo "Linking configs"
+echo "Linking files"
 DWM_DIR=$(pwd)
+
+if [ -z "$XDG_CONFIG_HOME" ]; then
+    mkdir "$HOME/.config"
+    XDG_CONFIG_HOME="$HOME/.config"
+fi
+
 ln -sf "$DWM_DIR/extra/zshrc" "$HOME/.zshrc"
-mkdir -p "$XDG_CONFIG_HOME/fastfetch"
+mkdir "$XDG_CONFIG_HOME/fastfetch"
 ln -sf "$DWM_DIR/extra/fastfetch.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 ln -sf "$DWM_DIR/extra/picom.conf" "$XDG_CONFIG_HOME/picom.conf"
 ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
@@ -53,8 +59,11 @@ $SU ln -sf "$DWM_DIR/extra/xinitrc" /etc/lemurs/wms/dwm
 sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
 echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
 
+mkdir "$HOME/.images"
+ln -sf "$DWM_DIR/extra/windows-error.jpg" "$HOME/.images/windows-error.jpg"
+
 echo "Setting up deps"
-$SU chsh /bin/zsh "$USER"
+$SU chsh -s /bin/zsh "$USER"
 $SU systemctl disable display-manager.service
 $SU systemctl enable lemurs.service
 
