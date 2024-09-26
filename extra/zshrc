@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.plugin.zsh
 
-eval "$(zoxide init zsh --cmd cd)"
+eval "$(zoxide init zsh)"
 
 alias sudo="sudo "
 alias uwuf="clear; uwufetch"
@@ -64,4 +64,8 @@ gpgconf --launch gpg-agent
 function command_not_found_handler() {
     echo -e "Command \e[91m$1\e[0m not found! \e[91mSTUPID! BONK!\e[0m OwO" >&2
     return 127
+}
+
+function cd() {
+    z "$@" 2>/dev/null || echo -e "Directory \e[91m$*\e[0m not found! \e[91mSTUPID! BONK!\e[0m OwO"
 }
