@@ -14,7 +14,7 @@ The installation script is designed for a minimal <a href="https://wiki.archlinu
 
 #### To install, execute the following commands:
 > [!CAUTION]
-> The might overwrite your existing dotfiles. Make sure to back everything up.
+> This might overwrite your existing dotfiles. Make sure to back everything up.
 
 ```bash
 git clone --depth 1 https://github.com/adamperkowski/dwm.git
