@@ -39,9 +39,9 @@ else
 fi
 
 printf "%b\n" "${YELLOW}Installing dependencies...${RC}"
-$SU pacman -S --needed --noconfirm base-devel fastfetch zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd feh pipewire \
+$SU pacman -S --needed --noconfirm base-devel fastfetch zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd pipewire \
     p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-nerd-fonts-symbols kitty rofi flameshot zsh zsh-syntax-highlighting \
-    zsh-autosuggestions > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
+    zsh-autosuggestions hsetroot > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
 $AUR_HELPER -S --needed --noconfirm picom-ftlabs-git lemurs > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install Oh My ZSH. It might be already installed.${RC}"
 printf "%b\n" "${GREEN}Dependencies installed.${RC}"
@@ -69,7 +69,7 @@ sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
 echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
 
 mkdir "$HOME/.images"
-ln -sf "$DWM_DIR/extra/windows-error.jpg" "$HOME/.images/windows-error.jpg"
+# ln -sf "$DWM_DIR/extra/windows-error.jpg" "$HOME/.images/windows-error.jpg"
 
 printf "%b\n" "${GREEN}Files linked.${RC}"
 
