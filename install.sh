@@ -55,20 +55,22 @@ if [ -z "$XDG_CONFIG_HOME" ]; then
 fi
 
 ln -sf "$DWM_DIR/extra/zshrc" "$HOME/.zshrc"
-mkdir "$XDG_CONFIG_HOME/fastfetch"
+mkdir "$XDG_CONFIG_HOME/fastfetch" > /dev/null
 ln -sf "$DWM_DIR/extra/fastfetch.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
+mkdir "$XDG_CONFIG_HOME/kitty" > /dev/null
+ln -sf "$DWM_DIR/extra/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
 ln -sf "$DWM_DIR/extra/picom.conf" "$XDG_CONFIG_HOME/picom.conf"
 ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
 
 $SU chmod +x "$DWM_DIR/extra/xinitrc"
 ln -sf "$DWM_DIR/extra/xinitrc" "$HOME/.xinitrc"
-$SU mkdir -p /etc/lemurs/wms
+$SU mkdir -p /etc/lemurs/wms > /dev/null
 $SU ln -sf "$DWM_DIR/extra/xinitrc" /etc/lemurs/wms/dwm
 
 sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
 echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
 
-mkdir "$HOME/.images"
+# mkdir "$HOME/.images" > /dev/null
 # ln -sf "$DWM_DIR/extra/windows-error.jpg" "$HOME/.images/windows-error.jpg"
 
 printf "%b\n" "${GREEN}Files linked.${RC}"

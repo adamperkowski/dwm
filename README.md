@@ -3,6 +3,8 @@
 
 Yoinked some stuff from [Nyx's DWM](https://github.com/nnyyxxxx/dwm).
 
+![Preview](preview.png)
+
 <h1>Installation</h1>
 
 The installation script is designed for a minimal <a href="https://wiki.archlinux.org/title/Arch_Linux" target="_blank">Arch Linux</a> install, but may work on some <a href="https://wiki.archlinux.org/title/Arch-based_distributions" target="_blank">Arch-based distros</a>.
