@@ -85,7 +85,7 @@ rm -f config.h && $SU make install > /dev/null 2>&1 || { printf "%b\n" "${RED}Fa
 
 printf "%b\n" "${GREEN}Done.${RC}"
 
-printf "%b" "${BLUE}Do you want to reboot your system now? (y/N) "
+printf "%b" "${BLUE}Do you want to reboot your system now? (y/N) ${RC}"
 read -r input
 case $input in
     y|Y)
