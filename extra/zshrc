@@ -56,7 +56,7 @@ alias clipout="xsel --output --clipboard"
 alias shred="shred -uvz"
 function shreddir() { find "$1" -type f -exec shred -uvz {} \; }
 
-ff; tmux ls
+ff #; tmux ls
 
 export GPG_TTY=$(tty)
 gpgconf --launch gpg-agent
