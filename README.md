@@ -1,5 +1,5 @@
 <div align="center">
-<h1>My DWM Rice [WIP]</h1>
+<h1>My DWM Rice</h1>
 
 Yoinked some stuff from [Nyx's DWM](https://github.com/nnyyxxxx/dwm).
 
@@ -32,3 +32,35 @@ cd $DWM_DIR
 ```
 
 You might need to re-run `./install.sh` after an update.
+
+<div align="center">
+<h1>Keybind List</h1>
+
+|Keybind|Description|
+|---|---|
+|`SUPER + RETURN`|Spawns `kitty` (terminal)|
+|`SUPER + SHIFT + RETURN`|Spawns `rofi` (application launcher)|
+|`PRNTSCR`|Spawns `flameshot gui` (screenshot utility)|
+|`SUPER + DOWN` or `RIGHT`|Moves focus to previous window|
+|`SUPER + UP` or `LEFT`|Moves focus to next window|
+|`SUPER + SHIFT + UP` or `RIGHT`|Resizes selected window up or right|
+|`SUPER + SHIFT + DOWN` or `LEFT`|Resizes selected window down or left|
+|`SUPER + LMB`|Drags selected window|
+|`SUPER + RMB`|Resizes selected window|
+|`SUPER + I`|Increases master window|
+|`SUPER + D`|Decreases master window|
+|`SUPER + TAB`|Enters focus mode|
+|`SUPER + SHIFT + TAB`|Exits focus mode|
+|`SUPER + SHIFT + C`|Kills selected window|
+|`SUPER + SPACE`|Toggles floating mode|
+|`SUPER + F`|Toggles fullscreen mode|
+|`SUPER + ,`|Moves focus to previous monitor|
+|`SUPER + .`|Moves focus to next monitor|
+|`SUPER + SHIFT + ,`|Moves selected window to previous monitor|
+|`SUPER + SHIFT + .`|Moves selected window to next monitor|
+|`SUPER + 1`-`9`|Moves focus to a tag `1`-`9`|
+|`SUPER + 0`|Shows all windows|
+|`SUPER + SHIFT + Q`|Kills dwm|
+|`SUPER + SHIFT + W`|Restarts dwm|
+
+</div>
