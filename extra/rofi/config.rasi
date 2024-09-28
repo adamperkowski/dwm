@@ -1,3 +1,5 @@
+// Copyright (c) 2021 Catppuccin
+
 configuration{
     modi: "run,drun,window";
     icon-theme: "Oranchelo";

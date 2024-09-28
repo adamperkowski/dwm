@@ -1,22 +1,5 @@
-# trapd00r.zsh-theme
-#
-# This theme needs a terminal supporting 256 colors as well as unicode.
-# In order to avoid external dependencies, it also has a zsh version of
-# the previously used perl script https://github.com/trapd00r/utils/blob/master/zsh_path,
-# which splits up the current path and makes it fancy.
-#
-# By default it spans over two lines like so:
-#
-# scp1@shiva:pts/9-> /home » scp1 (0)
-# >
-#
-# that's  user@host:pts/-> splitted path (return status)
-#
-# If the current directory is a git repository, we span 3 lines;
-#
-# git❨ master ❩ DIRTY
-# scp1@shiva:pts/4-> /home » scp1 » dev » utils (0)
-# >
+# Copyright (c) 2009-2022 Robby Russell
+# Adam Perkowski
 
 autoload -U add-zsh-hook
 autoload -Uz vcs_info

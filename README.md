@@ -1,8 +1,6 @@
 <div align="center">
 <h1>My DWM Rice</h1>
 
-Yoinked some stuff from [Nyx's DWM](https://github.com/nnyyxxxx/dwm).
-
 ![Preview](preview.png)
 
 <h1>Installation</h1>
