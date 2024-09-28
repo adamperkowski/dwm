@@ -18,7 +18,7 @@ alias uwuf="clear; uwufetch"
 alias ff="clear; fastfetch"
 alias nv="nvim -u /home/xx0a_q/.config/nvim/init.vim"
 alias hx="helix"
-alias icat="kitty +kitten icat"
+alias ls="lsd"
 
 alias ga="git add"
 alias gc="git commit -m"
@@ -41,8 +41,6 @@ Co-authored-by: $coauthor <${coauthor}@users.noreply.github.com>"
     git commit -m "$message" -m "$coauthors"
 }
 function gupdate-branch { git fetch "$1" main && git merge "$1"/main }
-
-alias update-aur-pkgs="cd AUR && ./auto_update_all.sh && cd -"    # this is for packages i maintain
 
 alias db="distrobox"
 alias cp="cp -i"

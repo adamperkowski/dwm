@@ -41,9 +41,9 @@ else
 fi
 
 printf "%b\n" "${YELLOW}Installing dependencies...${RC}"
-$SU pacman -S --needed --noconfirm base-devel fastfetch zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd pipewire \
+$SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd pipewire \
     p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-nerd-fonts-symbols kitty rofi flameshot zsh-syntax-highlighting git \
-    zsh-autosuggestions hsetroot zoxide > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
+    zsh-autosuggestions hsetroot zoxide gnupg > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
 $AUR_HELPER -S --needed --noconfirm picom-ftlabs-git lemurs > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install Oh My ZSH. It might be already installed.${RC}"
 printf "%b\n" "${GREEN}Dependencies installed.${RC}"
@@ -63,6 +63,11 @@ mkdir "$XDG_CONFIG_HOME/kitty" > /dev/null
 ln -sf "$DWM_DIR/extra/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
 ln -sf "$DWM_DIR/extra/picom.conf" "$XDG_CONFIG_HOME/picom.conf"
 ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
+mkdir -p "$HOME/.local/share/rofi/themes"
+mkdir -p "$XDG_CONFIG_HOME/rofi/userconfig"
+ln -sf "$DWM_DIR/extra/rofi/catppuccin-mocha.rasi" "$HOME/.local/share/rofi/themes/catppuccin-mocha.rasi"
+ln -sf "$DWM_DIR/extra/rofi/userconfig.rasi" "$XDG_CONFIG_HOME/rofi/userconfig/config.rasi"
+ln -sf "$DWM_DIR/extra/rofi/config.rasi" "$XDG_CONFIG_HOME/rofi/config.rasi"
 
 $SU chmod +x "$DWM_DIR/extra/xinitrc"
 ln -sf "$DWM_DIR/extra/xinitrc" "$HOME/.xinitrc"
