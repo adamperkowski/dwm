@@ -26,7 +26,6 @@ alias gp="git push origin"
 alias gb="git branch"
 alias gpull="git pull origin"
 alias gcherry="git cherry-pick -x"
-alias gupdate-branch="git fetch upstream main && git merge upstream/main"
 alias gtui="gitui -t /home/xx0a_q/.config/gitui/catppuccin-mocha.ron"
 alias gmain="if ! git checkout --track origin/main; then; git checkout main; fi"
 function gclone() { git clone "$1" && cd "$(basename $1 .git)" }
@@ -41,6 +40,7 @@ Co-authored-by: $coauthor <${coauthor}@users.noreply.github.com>"
 
     git commit -m "$message" -m "$coauthors"
 }
+function gupdate-branch { git fetch "$1" main && git merge "$1"/main }
 
 alias update-aur-pkgs="cd AUR && ./auto_update_all.sh && cd -"    # this is for packages i maintain
 
