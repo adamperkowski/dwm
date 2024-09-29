@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# TODO $DWM_DIR not set handling
+# TODO $DWL_DIR not set handling
 
 RC='\033[0m'
 RED='\033[31m'
@@ -49,29 +49,29 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 printf "%b\n" "${GREEN}Dependencies installed.${RC}"
 
 printf "%b\n" "${YELLOW}Linking files...${RC}"
-DWM_DIR=$(pwd)
+DWL_DIR=$(pwd)
 
 if [ -z "$XDG_CONFIG_HOME" ]; then
     mkdir "$HOME/.config" > /dev/null
     XDG_CONFIG_HOME="$HOME/.config"
 fi
 
-ln -sf "$DWM_DIR/extra/zshrc" "$HOME/.zshrc"
+ln -sf "$DWL_DIR/extra/zshrc" "$HOME/.zshrc"
 mkdir "$XDG_CONFIG_HOME/fastfetch" &> /dev/null
-ln -sf "$DWM_DIR/extra/fastfetch.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
+ln -sf "$DWL_DIR/extra/fastfetch.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 mkdir "$XDG_CONFIG_HOME/kitty" &> /dev/null
-ln -sf "$DWM_DIR/extra/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
-ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
+ln -sf "$DWL_DIR/extra/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
+ln -sf "$DWL_DIR/extra/trapd00r-catppuccin.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
 
-$SU chmod +x "$DWM_DIR/extra/start-dwl"
+$SU chmod +x "$DWL_DIR/extra/start-dwl"
 $SU mkdir -p /etc/lemurs/wayland > /dev/null
-$SU ln -sf "$DWM_DIR/extra/start-dwl" /etc/lemurs/wayland/dwl
+$SU ln -sf "$DWL_DIR/extra/start-dwl" /etc/lemurs/wayland/dwl
 
-sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
-echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
+sed -i '/^DWL_DIR=/d' "$DWL_DIR/extra/zshrc"
+echo "DWL_DIR=$DWL_DIR" >> "$DWL_DIR/extra/zshrc"
 
 # mkdir "$HOME/.images" > /dev/null
-# ln -sf "$DWM_DIR/extra/windows-error.jpg" "$HOME/.images/windows-error.jpg"
+# ln -sf "$DWL_DIR/extra/windows-error.jpg" "$HOME/.images/windows-error.jpg"
 
 printf "%b\n" "${GREEN}Files linked.${RC}"
 
@@ -82,7 +82,7 @@ $SU systemctl enable lemurs.service
 printf "%b\n" "${GREEN}Dependencies set up.${RC}"
 
 printf "%b\n" "${YELLOW}Installing dwl...${RC}"
-cd "$DWM_DIR/dwl"
+cd "$DWL_DIR/dwl"
 rm -f config.h && $SU make install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwl.${RC}"; exit 1; }
 
 printf "%b\n" "${GREEN}Done.${RC}"

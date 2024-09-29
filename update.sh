@@ -1,6 +1,6 @@
 #! /bin/bash
 
-# TODO $DWM_DIR not set handling
+# TODO $DWL_DIR not set handling
 
 RC='\033[0m'
 RED='\033[31m'
@@ -35,7 +35,7 @@ fi
 
 if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
     printf "%b\n" "${YELLOW}Saving user changes...${RC}"
-    cd "$DWM_DIR" || { printf "%b\n" "${RED}Failed to change directory to \$DWM_DIR.${RC}"; exit 1; }
+    cd "$DWL_DIR" || { printf "%b\n" "${RED}Failed to change directory to \$DWL_DIR.${RC}"; exit 1; }
     git stash > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to stash the changes.${RC}"; exit 1; }
     printf "%b\n" "${GREEN}Changes saved.${RC}"
 fi
@@ -53,13 +53,13 @@ if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
 fi
 
 printf "%b\n" "${YELLOW}Reconfiguring variables...${RC}"
-DWM_DIR=$(pwd)
-sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
-echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
+DWL_DIR=$(pwd)
+sed -i '/^DWL_DIR=/d' "$DWL_DIR/extra/zshrc"
+echo "DWL_DIR=$DWL_DIR" >> "$DWL_DIR/extra/zshrc"
 printf "%b\n" "${GREEN}Variables configured."
 
 printf "%b\n" "${YELLOW}Installing dwl...${RC}"
-cd "$DWM_DIR/dwl"
+cd "$DWL_DIR/dwl"
 rm -f config.h && $SU make install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwl.${RC}"; exit 1; }
 
 printf "%b\n" "${GREEN}Done.${RC}"
