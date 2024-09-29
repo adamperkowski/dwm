@@ -1,0 +1,15 @@
+picom -b &
+hsetroot -solid "#1e1e2e" &
+# feh --bg-center ~/.images/windows-error.jpg &
+
+while true; do
+    time=$(date "+%I:%M %p")
+
+    status="$time"
+
+    xsetroot -name "$status"
+
+    sleep 1m
+done &
+
+exec dwm
