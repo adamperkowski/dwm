@@ -72,7 +72,7 @@ ln -sf "$DWM_DIR/extra/rofi/config.rasi" "$XDG_CONFIG_HOME/rofi/config.rasi"
 $SU chmod +x "$DWM_DIR/extra/xinitrc"
 ln -sf "$DWM_DIR/extra/xinitrc" "$HOME/.xinitrc"
 $SU mkdir -p /etc/lemurs/wms > /dev/null
-$SU ln -sf "$DWM_DIR/extra/xinitrc" /etc/lemurs/wms/dwm
+$SU ln -sf "$DWM_DIR/extra/xinitrc" /etc/lemurs/wms/dwl
 
 sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
 echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
@@ -88,9 +88,9 @@ $SU systemctl disable display-manager.service > /dev/null 2>&1 || printf "%b\n" 
 $SU systemctl enable lemurs.service
 printf "%b\n" "${GREEN}Dependencies set up.${RC}"
 
-printf "%b\n" "${YELLOW}Installing dwm...${RC}"
-cd "$DWM_DIR/dwm"
-rm -f config.h && $SU make install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwm.${RC}"; exit 1; }
+printf "%b\n" "${YELLOW}Installing dwl...${RC}"
+cd "$DWM_DIR/dwl"
+rm -f config.h && $SU make install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwl.${RC}"; exit 1; }
 
 printf "%b\n" "${GREEN}Done.${RC}"
 

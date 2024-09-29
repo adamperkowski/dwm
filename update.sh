@@ -41,9 +41,9 @@ if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
 fi
 
 printf "%b\n" "${YELLOW}Updating...${RC}"
-git fetch origin main
-git reset --hard origin/main
-git pull --rebase origin main
+git fetch origin dwl
+git reset --hard origin/dwl
+git pull --rebase origin dwl
 printf "%b\n" "${GREEN}Repository updated.${RC}"
 
 if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
@@ -58,8 +58,8 @@ sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
 echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
 printf "%b\n" "${GREEN}Variables configured."
 
-printf "%b\n" "${YELLOW}Installing dwm...${RC}"
-cd "$DWM_DIR/dwm"
-rm -f config.h && $SU make install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwm.${RC}"; exit 1; }
+printf "%b\n" "${YELLOW}Installing dwl...${RC}"
+cd "$DWM_DIR/dwl"
+rm -f config.h && $SU make install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwl.${RC}"; exit 1; }
 
 printf "%b\n" "${GREEN}Done.${RC}"

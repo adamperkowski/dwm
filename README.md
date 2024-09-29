@@ -1,5 +1,5 @@
 <div align="center">
-<h1>My DWM Rice</h1>
+<h1>My DWL Rice [WIP]</h1>
 
 ![Preview](preview.png)
 
@@ -17,7 +17,7 @@ The installation script is designed for a minimal <a href="https://wiki.archlinu
 > This might overwrite your existing dotfiles. Make sure to back everything up.
 
 ```bash
-git clone --depth 1 https://github.com/adamperkowski/dwm.git
+git clone -b dwl https://github.com/adamperkowski/dwm.git
 cd dwm
 ./install.sh
 ```
@@ -58,7 +58,7 @@ You might need to re-run `./install.sh` after an update.
 |`SUPER + SHIFT + .`|Moves selected window to next monitor|
 |`SUPER + 1`-`9`|Moves focus to a tag `1`-`9`|
 |`SUPER + 0`|Shows all windows|
-|`SUPER + SHIFT + Q`|Kills dwm|
-|`SUPER + SHIFT + W`|Restarts dwm|
+|`SUPER + SHIFT + Q`|Kills dwl|
+|`SUPER + SHIFT + W`|Restarts dwl|
 
 </div>
