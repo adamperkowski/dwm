@@ -1,7 +1,7 @@
 <div align="center">
 <h1>My DWL Rice [WIP]</h1>
 
-![Preview](preview.png)
+<!-- ![Preview](preview.png) -->
 
 <h1>Installation</h1>
 

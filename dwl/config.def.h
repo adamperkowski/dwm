@@ -6,7 +6,7 @@
 static const int sloppyfocus               = 1;  /* focus follows mouse */
 static const int bypass_surface_visibility = 0;  /* 1 means idle inhibitors will disable idle tracking even if it's surface isn't visible  */
 static const unsigned int borderpx         = 2;  /* border pixel of windows */
-static const float rootcolor[]             = COLOR(0xf38ba8ff);
+static const float rootcolor[]             = COLOR(0x1e1e2eff);
 static const float bordercolor[]           = COLOR(0x313244ff);
 static const float focuscolor[]            = COLOR(0xf38ba8ff);
 static const float urgentcolor[]           = COLOR(0x1e1e2eff);
@@ -118,8 +118,8 @@ static const enum libinput_config_tap_button_map button_map = LIBINPUT_CONFIG_TA
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 
 /* commands */
-static const char *termcmd[] = { "foot", NULL };
-static const char *menucmd[] = { "wofi", "-show", "drun", NULL };
+static const char *termcmd[] = { "kitty", NULL };
+static const char *menucmd[] = { "wofi", "--show", "drun", NULL };
 
 static const Key keys[] = {
 	/* Note that Shift changes certain key codes: c -> C, 2 -> at, etc. */

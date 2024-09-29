@@ -41,10 +41,10 @@ else
 fi
 
 printf "%b\n" "${YELLOW}Installing dependencies...${RC}"
-$SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh xorg xorg-xinit xorg-xsetroot ttf-firacode-nerd pipewire \
-    p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji ttf-nerd-fonts-symbols kitty rofi flameshot zsh-syntax-highlighting git \
-    zsh-autosuggestions hsetroot zoxide gnupg > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
-$AUR_HELPER -S --needed --noconfirm picom-ftlabs-git lemurs > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
+$SU pacman -S --needed --noconfirm base-devel fastfetch lsd zsh libinput wayland wlroots libxkbcommon wayland-protocols \
+    pkg-config libxcb wlroots xorg-xwayland ttf-firacode-nerd pipewire p7zip noto-fonts noto-fonts-cjk noto-fonts-emoji \
+    ttf-nerd-fonts-symbols kitty rofi flameshot zsh-syntax-highlighting git zsh-autosuggestions hsetroot zoxide gnupg > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dependencies.${RC}"; exit 1; }
+$AUR_HELPER -S --needed --noconfirm lemurs > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install Oh My ZSH. It might be already installed.${RC}"
 printf "%b\n" "${GREEN}Dependencies installed.${RC}"
 
@@ -61,18 +61,11 @@ mkdir "$XDG_CONFIG_HOME/fastfetch" &> /dev/null
 ln -sf "$DWM_DIR/extra/fastfetch.jsonc" "$XDG_CONFIG_HOME/fastfetch/config.jsonc"
 mkdir "$XDG_CONFIG_HOME/kitty" &> /dev/null
 ln -sf "$DWM_DIR/extra/kitty.conf" "$XDG_CONFIG_HOME/kitty/kitty.conf"
-ln -sf "$DWM_DIR/extra/picom.conf" "$XDG_CONFIG_HOME/picom.conf"
 ln -sf "$DWM_DIR/extra/trapd00r-catppuccin.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/trapd00r-catppuccin.zsh-theme"
-mkdir -p "$HOME/.local/share/rofi/themes" > /dev/null
-mkdir -p "$XDG_CONFIG_HOME/rofi/userconfig" > /dev/null
-ln -sf "$DWM_DIR/extra/rofi/catppuccin-mocha.rasi" "$HOME/.local/share/rofi/themes/catppuccin-mocha.rasi"
-ln -sf "$DWM_DIR/extra/rofi/userconfig.rasi" "$XDG_CONFIG_HOME/rofi/userconfig/config.rasi"
-ln -sf "$DWM_DIR/extra/rofi/config.rasi" "$XDG_CONFIG_HOME/rofi/config.rasi"
 
-$SU chmod +x "$DWM_DIR/extra/xinitrc"
-ln -sf "$DWM_DIR/extra/xinitrc" "$HOME/.xinitrc"
-$SU mkdir -p /etc/lemurs/wms > /dev/null
-$SU ln -sf "$DWM_DIR/extra/xinitrc" /etc/lemurs/wms/dwl
+$SU chmod +x "$DWM_DIR/extra/start-dwl"
+$SU mkdir -p /etc/lemurs/wayland > /dev/null
+$SU ln -sf "$DWM_DIR/extra/start-dwl" /etc/lemurs/wayland/dwl
 
 sed -i '/^DWM_DIR=/d' "$DWM_DIR/extra/zshrc"
 echo "DWM_DIR=$DWM_DIR" >> "$DWM_DIR/extra/zshrc"
