@@ -41,9 +41,9 @@ if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
 fi
 
 printf "%b\n" "${YELLOW}Updating...${RC}"
-git fetch origin main
-git reset --hard origin/main
-git pull --rebase origin main
+git fetch origin dwm
+git reset --hard origin/dwm
+git pull --rebase origin dwm
 printf "%b\n" "${GREEN}Repository updated.${RC}"
 
 if [ "$SAVE_USER_CHANGES" -eq 1 ]; then
