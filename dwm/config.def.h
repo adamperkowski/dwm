@@ -32,7 +32,7 @@ static const Rule rules[] = {
 	 */
 	/* class      instance    title       tags mask     isfloating   monitor */
 	{ "floorp",   NULL,       NULL,       2,            0,           0 },
-	{ "Firefox",  NULL,       NULL,       2,            0,           0 },
+	{ "firefox",  NULL,       NULL,       2,            0,           1 },
 };
 
 /* layout(s) */
