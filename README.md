@@ -62,4 +62,6 @@ You might need to re-run `./install.sh` after an update.
 |`SUPER + SHIFT + W`|Restarts dwm|
 |`CTRL + SHIFT + E`|Spawns `emote` picker|
 
+![Installation Preview](install_preview.gif)
+
 </div>
