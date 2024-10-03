@@ -93,7 +93,7 @@ printf "%b\n" "${GREEN}Files linked.${RC}"
 printf "%b\n" "${YELLOW}Setting up dependencies...${RC}"
 $SU chsh -s /bin/zsh "$USER" > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to change default shell to ZSH.${RC}"
 $SU systemctl disable display-manager.service > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to disable display-manager.service.${RC}"
-$SU systemctl enable lemurs.service
+$SU systemctl enable lemurs.service > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to enable lemurs.service.${RC}"
 printf "%b\n" "${GREEN}Dependencies set up.${RC}"
 
 printf "%b\n" "${YELLOW}Installing dwm...${RC}"

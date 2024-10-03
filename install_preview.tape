@@ -55,10 +55,11 @@
 #   Hide                            Hide the subsequent commands from the output
 #   Show                            Show the subsequent commands in the output
 
-Output preview.gif
+Output install_preview.gif
 
 Require bash
 
+Set Theme "Catppuccin Mocha"
 Set Shell "bash"
 Set FontSize 32
 Set Width 1200
