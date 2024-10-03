@@ -32,6 +32,11 @@ cd $DWM_DIR
 You might need to re-run `./install.sh` after an update.
 
 <div align="center">
+
+<h1>Installation Preview</h1>
+
+![Installation Preview](install_preview.gif)
+
 <h1>Keybind List</h1>
 
 |Keybind|Description|
@@ -61,7 +66,5 @@ You might need to re-run `./install.sh` after an update.
 |`SUPER + SHIFT + Q`|Kills dwm|
 |`SUPER + SHIFT + W`|Restarts dwm|
 |`CTRL + SHIFT + E`|Spawns `emote` picker|
-
-![Installation Preview](install_preview.gif)
 
 </div>
