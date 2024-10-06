@@ -98,7 +98,7 @@ printf "%b\n" "${GREEN}Dependencies set up.${RC}"
 
 printf "%b\n" "${YELLOW}Installing dwm...${RC}"
 cd "$DWM_DIR/dwm"
-rm -f config.h && $SU make install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwm.${RC}"; exit 1; }
+$SU make clean install > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install dwm.${RC}"; exit 1; }
 
 printf "%b\n" "${GREEN}Done.${RC}"
 
