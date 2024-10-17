@@ -17,6 +17,7 @@ alias diff='diff --color=auto'
 alias grep='grep --color=auto'
 alias ip='ip -color=auto'
 export LESS='-R --use-color -Dd+r$Du+b$'
+alias ping='prettyping'
 
 alias sudo="sudo "
 alias uwuf="clear; uwufetch"
