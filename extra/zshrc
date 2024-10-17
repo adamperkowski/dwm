@@ -13,6 +13,11 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.pl
 
 eval "$(zoxide init zsh)"
 
+alias diff='diff --color=auto'
+alias grep='grep --color=auto'
+alias ip='ip -color=auto'
+export LESS='-R --use-color -Dd+r$Du+b$'
+
 alias sudo="sudo "
 alias uwuf="clear; uwufetch"
 alias ff="clear; fastfetch"
@@ -52,7 +57,7 @@ alias clipin="xsel --input --clipboard"
 alias clipout="xsel --output --clipboard"
 
 alias shred="shred -uvz"
-function shreddir() { find "$1" -type f -exec shred -uvz {} \; }
+function shreddir() { find "$1" -type f -exec shred -uvz {} \; rm -rf "$1" }
 
 ff #; tmux ls
 
