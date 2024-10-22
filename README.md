@@ -3,6 +3,36 @@
 
 ![Preview](preview.png)
 
+<h1>Features</h1>
+
+<h2>DWM</h2>
+
+</div>
+
+- Better fullscreen
+- Floating window centering
+- New windows attach to the bottom of the stack
+- Window title centered
+- Right mouse button window resizing
+- Gaps
+- **Smooth updating & restarting** with window preservation
+- Floating window position saving
+- Systray
+- Moving **tiled** windows with mouse buttons
+
+<h2 align="center">Extra</h2>
+
+- Automatic installation and update scripts
+- Kitty configuration
+- Fastfetch rice
+- Full Neovim configuration with remaps, theme and plugins
+- Custom coc.nvim patch
+- Picom configuration
+- Rofi rice
+- Custom ZSH configuration and theme
+
+<div align="center">
+
 <h1>Installation</h1>
 
 The installation script is designed for a minimal <a href="https://wiki.archlinux.org/title/Arch_Linux" target="_blank">Arch Linux</a> install, but may work on some <a href="https://wiki.archlinux.org/title/Arch-based_distributions" target="_blank">Arch-based distros</a>.
@@ -10,7 +40,7 @@ The installation script is designed for a minimal <a href="https://wiki.archlinu
 </div>
 
 > [!IMPORTANT]
-> This rice relies on having a permament existing `dwm/` directory. **Don't remove the directory after setup.**
+> This rice relies on having a permanent existing `dwm/` directory. **Don't remove the directory after setup.**
 
 #### To install, execute the following commands:
 > [!CAUTION]
