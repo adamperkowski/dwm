@@ -1,0 +1,16 @@
+diff --git a/plugin/coc.vim b/plugin/coc.vim
+index 59266b7..5eeadef 100644
+--- a/plugin/coc.vim
++++ b/plugin/coc.vim
+@@ -722,8 +722,9 @@ endif
+ if empty(mapcheck('<C-e>', 'i'))
+   inoremap <silent><expr> <C-e> coc#pum#visible() ? coc#pum#cancel() : "\<C-e>"
+ endif
+-if empty(mapcheck('<C-y>', 'i'))
+-  inoremap <silent><expr> <C-y> coc#pum#visible() ? coc#pum#confirm() : "\<C-y>"
++if empty(mapcheck('<Tab>', 'i'))
++  inoremap <silent><expr> <Tab> coc#pum#visible() ? coc#pum#confirm() : "\<Tab>"
++
+ endif
+ if empty(mapcheck('<PageDown>', 'i'))
+   inoremap <silent><expr> <PageDown> coc#pum#visible() ? coc#pum#scroll(1) : "\<PageDown>"

@@ -55,7 +55,7 @@ $AUR_HELPER -R --noconfirm picom &> /dev/null    # remove possibly conflicting d
 $AUR_HELPER -S --needed --noconfirm picom-ftlabs-git lemurs emote git-extras > /dev/null 2>&1 || { printf "%b\n" "${RED}Failed to install AUR dependencies.${RC}"; exit 1; }
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install Oh My ZSH. It might be already installed.${RC}"
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install vim-plug."
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim' > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install vim-plug.${RC}"
 printf "%b\n" "${GREEN}Dependencies installed.${RC}"
 
 printf "%b\n" "${YELLOW}Linking files...${RC}"
@@ -98,6 +98,8 @@ printf "%b\n" "${YELLOW}Setting up dependencies...${RC}"
 $SU chsh -s /bin/zsh "$USER" > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to change default shell to ZSH.${RC}"
 $SU systemctl disable display-manager.service > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to disable display-manager.service.${RC}"
 $SU systemctl enable lemurs.service > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to enable lemurs.service.${RC}"
+nvim --headless -c 'PlugInstall' -c 'qa' > /dev/null 2>&1 || printf "%b\n" "${RED}Failed to install neovim plugins.${RC}"
+cd "$HOME/.local/share/nvim/plugged/coc.nvim" && git apply "$DWM_DIR/extra/coc-nvim.diff" > /dev/null 2>&1 && cd - || printf "%b\n" "${RED}Failed to patch coc.nvim.${RC}"
 printf "%b\n" "${GREEN}Dependencies set up.${RC}"
 
 printf "%b\n" "${YELLOW}Installing dwm...${RC}"
