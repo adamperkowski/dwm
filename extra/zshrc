@@ -51,7 +51,7 @@ function gupdate-branch { git fetch "$1" main && git merge "$1"/main }
 alias db="distrobox"
 alias cp="cp -i"
 
-alias system-upgrade="yes | paru; sudo pacman -Scc --noconfirm; paru -Scc --noconfirm"
+alias system-upgrade="yes | paru; sudo pacman -Scc --noconfirm; paru -Scc --noconfirm; rustup update"
 alias vencord-upgrade='sh -c "$(curl -sS https://raw.githubusercontent.com/Vendicated/VencordInstaller/main/install.sh)"'
 
 alias clipin="xsel --input --clipboard"

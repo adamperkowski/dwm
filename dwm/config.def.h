@@ -30,9 +30,10 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "floorp",   NULL,       NULL,       2,            0,           0 },
-	{ "firefox",  NULL,       NULL,       2,            0,           1 },
+	/* class  instance  title  tags  mask  isfloating  monitor */
+	{ "floorp",           NULL,  NULL,  2,  0,  0 },
+	{ "firefox",          NULL,  NULL,  2,  0,  1 },
+	{ "thorium-browser",  NULL,  NULL,  2,  0,  0 },
 };
 
 /* layout(s) */
