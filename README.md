@@ -3,8 +3,6 @@
 
 ![Preview](preview.png)
 
-<h1>Features</h1>
-
 <h2>DWM</h2>
 
 </div>
@@ -25,7 +23,7 @@
 - Automatic installation and update scripts
 - Kitty configuration
 - Fastfetch rice
-- Full Neovim configuration with remaps, theme and plugins
+- Full Neovim configuration with LSP, remaps, theme and plugins
 - Custom coc.nvim patch
 - Picom configuration
 - Rofi rice
